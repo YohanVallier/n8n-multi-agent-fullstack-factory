@@ -1,0 +1,18 @@
+# Proprietary production workflows & secrets (never commit)
+*production*.json
+*private*.json
+*credentials*.json
+*secrets*.json
+.env
+.env.*
+
+# Local n8n backups & generated ZIPs
+.n8n-files/
+*.zip
+output/
+
+# OS & IDE files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

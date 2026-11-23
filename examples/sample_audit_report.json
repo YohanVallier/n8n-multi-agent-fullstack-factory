@@ -1,0 +1,38 @@
+{
+  "project_slug": "demo-task-manager-fullstack",
+  "audit_round": 2,
+  "approved": true,
+  "retries_used": 1,
+  "max_retries": 3,
+  "scores": {
+    "security_score": 94,
+    "qa_score": 92,
+    "code_quality_score": 93
+  },
+  "verified_static_checks": [
+    "API contract consistency across frontend HTTP client and backend route handlers",
+    "Zero hardcoded credentials or secrets across all modules",
+    "Input validation schemas enforced on auth and CRUD endpoints"
+  ],
+  "recommended_runtime_checks": [
+    "Copy .env.example to .env and configure environment variables",
+    "Run automated unit/integration test suites locally",
+    "Boot services via docker compose up --build and verify E2E flow"
+  ],
+  "self_healing_history": [
+    {
+      "round": 1,
+      "status": "REJECTED",
+      "routed_modules": [
+        "backend"
+      ],
+      "summary": "Missing password strength validation patched automatically by Backend Fixer."
+    },
+    {
+      "round": 2,
+      "status": "APPROVED",
+      "routed_modules": [],
+      "summary": "All CRITICAL and HIGH findings resolved; released to Agent 10 (DevOps)."
+    }
+  ]
+}

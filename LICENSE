@@ -1,0 +1,15 @@
+Copyright (c) 2026 [Seu Nome / Your Name]. All Rights Reserved.
+
+PORTFOLIO SHOWCASE & INTELLECTUAL PROPERTY NOTICE
+
+This repository is published strictly for portfolio presentation, technical
+evaluation, and architectural demonstration purposes.
+
+The workflow JSON file included in `workflow/` is an intentionally redacted,
+non-functional 66-node architectural blueprint. Proprietary system prompts,
+structured output schemas, JavaScript orchestration code, self-healing logic,
+and full production workflows are withheld.
+
+No permission is granted to copy, modify, redistribute, sublicense, or use
+any part of this project for commercial or production purposes without prior
+written authorization from the author.

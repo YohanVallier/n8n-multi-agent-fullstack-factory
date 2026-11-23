@@ -1,0 +1,1917 @@
+{
+  "name": "Multi-Agent Full Stack Software Factory — Architectural Blueprint (Redacted / Non-Functional)",
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate"
+  },
+  "nodes": [
+    {
+      "id": "blueprint-node-01",
+      "name": "Chat Trigger",
+      "type": "@n8n/n8n-nodes-langchain.chatTrigger",
+      "typeVersion": 1.1,
+      "position": [
+        224,
+        192
+      ],
+      "parameters": {
+        "options": {}
+      }
+    },
+    {
+      "id": "blueprint-node-02",
+      "name": "Memoria Conversacional",
+      "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+      "typeVersion": 1.3,
+      "position": [
+        544,
+        432
+      ],
+      "parameters": {
+        "sessionIdType": "customKey",
+        "sessionKey": "REDACTED_SESSION_KEY",
+        "contextWindowLength": 1
+      }
+    },
+    {
+      "id": "blueprint-node-03",
+      "name": "OpenAI GPT-4o-mini (Chatbot)",
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        352,
+        432
+      ],
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "id",
+          "value": "REDACTED_OPENAI_MODEL"
+        },
+        "options": {}
+      }
+    },
+    {
+      "id": "blueprint-node-04",
+      "name": "OpenAI GPT-4o (Planejamento e Design)",
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        1552,
+        752
+      ],
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "id",
+          "value": "REDACTED_OPENAI_MODEL"
+        },
+        "options": {}
+      }
+    },
+    {
+      "id": "blueprint-node-05",
+      "name": "DeepSeek Chat (Arquitetura e Dev)",
+      "type": "@n8n/n8n-nodes-langchain.lmChatDeepSeek",
+      "typeVersion": 1,
+      "position": [
+        2784,
+        752
+      ],
+      "parameters": {
+        "model": "REDACTED_DEEPSEEK_MODEL",
+        "options": {}
+      }
+    },
+    {
+      "id": "blueprint-node-06",
+      "name": "OpenAI GPT-4o (Seguranca e Auditoria)",
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        4624,
+        752
+      ],
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "id",
+          "value": "REDACTED_OPENAI_MODEL"
+        },
+        "options": {}
+      }
+    },
+    {
+      "id": "blueprint-node-07",
+      "name": "DeepSeek Chat (QA, Correcao e DevOps)",
+      "type": "@n8n/n8n-nodes-langchain.lmChatDeepSeek",
+      "typeVersion": 1,
+      "position": [
+        5472,
+        752
+      ],
+      "parameters": {
+        "model": "REDACTED_DEEPSEEK_MODEL",
+        "options": {}
+      }
+    },
+    {
+      "id": "blueprint-node-08",
+      "name": "Agente 0 - Chatbot Orquestrador",
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 1.7,
+      "position": [
+        512,
+        192
+      ],
+      "parameters": {
+        "promptType": "define",
+        "text": "[REDACTED INPUT TEMPLATE — Agente 0 - Chatbot Orquestrador]",
+        "hasOutputParser": true,
+        "options": {
+          "systemMessage": "[REDACTED — ARCHITECTURAL BLUEPRINT ONLY / NON-FUNCTIONAL]\nAgent: Agente 0 - Chatbot Orquestrador\nRole: Conversational orchestrator with window memory that triages user intent (chat vs. build_software) and consolidates the project brief.\nProprietary prompt engineering and orchestration rules omitted for IP protection."
+        }
+      }
+    },
+    {
+      "id": "blueprint-node-09",
+      "name": "Parser - Chatbot Orquestrador",
+      "type": "@n8n/n8n-nodes-langchain.outputParserStructured",
+      "typeVersion": 1.2,
+      "position": [
+        752,
+        432
+      ],
+      "parameters": {
+        "jsonSchemaExample": "{\n  \"status\": \"REDACTED_SCHEMA_FOR_PORTFOLIO_ONLY\",\n  \"parser_node\": \"Parser - Chatbot Orquestrador\",\n  \"note\": \"Strict output JSON schema omitted to protect intellectual property.\"\n}"
+      }
+    },
+    {
+      "id": "blueprint-node-10",
+      "name": "IF - Iniciar Geracao de Programa?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        832,
+        192
+      ],
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "redacted-if-10",
+              "leftValue": "REDACTED_EXPRESSION",
+              "rightValue": "REDACTED_VALUE",
+              "operator": {
+                "type": "string",
+                "operation": "equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      }
+    },
+    {
+      "id": "blueprint-node-11",
+      "name": "Responder no Chat",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1088,
+        416
+      ],
+      "parameters": {
+        "jsCode": "// [REDACTED — ARCHITECTURAL BLUEPRINT ONLY / NON-FUNCTIONAL]\n// Node: Responder no Chat\n// Responsibility: Formats conversational chat reply when user intent is not build_software.\n// Proprietary implementation omitted to protect intellectual property.\nthrow new Error('Non-functional portfolio blueprint: implementation redacted.');"
+      }
+    },
+    {
+      "id": "blueprint-node-12",
+      "name": "Inicializar Estado do Projeto",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1088,
+        144
+      ],
+      "parameters": {
+        "jsCode": "// [REDACTED — ARCHITECTURAL BLUEPRINT ONLY / NON-FUNCTIONAL]\n// Node: Inicializar Estado do Projeto\n// Responsibility: Initializes project execution context, retry counters, session metadata, and ZIP storage settings.\n// Proprietary implementation omitted to protect intellectual property.\nthrow new Error('Non-functional portfolio blueprint: implementation redacted.');"
+      }
+    },
+    {
+      "id": "blueprint-node-13",
+      "name": "Agente 1 - Gerente de Projeto",
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 1.7,
+      "position": [
+        1360,
+        144
+      ],
+      "parameters": {
+        "promptType": "define",
+        "text": "[REDACTED INPUT TEMPLATE — Agente 1 - Gerente de Projeto]",
+        "hasOutputParser": true,
+        "options": {
+          "systemMessage": "[REDACTED — ARCHITECTURAL BLUEPRINT ONLY / NON-FUNCTIONAL]\nAgent: Agente 1 - Gerente de Projeto\nRole: Senior PM that produces functional/non-functional requirements, constraints, acceptance criteria, and dependency-aware backlog.\nProprietary prompt engineering and orchestration rules omitted for IP protection."
+        }
+      }
+    },
+    {
+      "id": "blueprint-node-14",
+      "name": "Parser - Gerente de Projeto",
+      "type": "@n8n/n8n-nodes-langchain.outputParserStructured",
+      "typeVersion": 1.2,
+      "position": [
+        1424,
+        352
+      ],
+      "parameters": {
+        "jsonSchemaExample": "{\n  \"status\": \"REDACTED_SCHEMA_FOR_PORTFOLIO_ONLY\",\n  \"parser_node\": \"Parser - Gerente de Projeto\",\n  \"note\": \"Strict output JSON schema omitted to protect intellectual property.\"\n}"
+      }
+    },
+    {
+      "id": "blueprint-node-15",
+      "name": "Agente 2 - Arquiteto de Software",
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 1.7,
+      "position": [
+        1728,
+        144
+      ],
+      "parameters": {
+        "promptType": "define",
+        "text": "[REDACTED INPUT TEMPLATE — Agente 2 - Arquiteto de Software]",
+        "hasOutputParser": true,
+        "options": {
+          "systemMessage": "[REDACTED — ARCHITECTURAL BLUEPRINT ONLY / NON-FUNCTIONAL]\nAgent: Agente 2 - Arquiteto de Software\nRole: Senior Architect that selects a lean stack, defines ADRs, directory structure, frozen API contracts, auth strategy, and env vars.\nProprietary prompt engineering and orchestration rules omitted for IP protection."
+        }
+      }
+    },
+    {
+      "id": "blueprint-node-16",
+      "name": "Parser - Arquiteto",
+      "type": "@n8n/n8n-nodes-langchain.outputParserStructured",
+      "typeVersion": 1.2,
+      "position": [
+        1792,
+        352
+      ],
+      "parameters": {
+        "jsonSchemaExample": "{\n  \"status\": \"REDACTED_SCHEMA_FOR_PORTFOLIO_ONLY\",\n  \"parser_node\": \"Parser - Arquiteto\",\n  \"note\": \"Strict output JSON schema omitted to protect intellectual property.\"\n}"
+      }
+    },
+    {
+      "id": "blueprint-node-17",
+      "name": "Agente 3 - Especialista UI/UX",
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 1.7,
+      "position": [
+        2128,
+        -64
+      ],
+      "parameters": {
+        "promptType": "define",
+        "text": "[REDACTED INPUT TEMPLATE — Agente 3 - Especialista UI/UX]",
+        "hasOutputParser": true,
+        "options": {
+          "systemMessage": "[REDACTED — ARCHITECTURAL BLUEPRINT ONLY / NON-FUNCTIONAL]\nAgent: Agente 3 - Especialista UI/UX\nRole: Senior UI/UX Specialist defining design tokens, routes, component states, responsiveness, and WCAG 2.1 AA accessibility.\nProprietary prompt engineering and orchestration rules omitted for IP protection."
+        }
+      }
+    },
+    {
+      "id": "blueprint-node-18",
+      "name": "Parser - UI/UX",
+      "type": "@n8n/n8n-nodes-langchain.outputParserStructured",
+      "typeVersion": 1.2,
+      "position": [
+        2192,
+        160
+      ],
+      "parameters": {
+        "jsonSchemaExample": "{\n  \"status\": \"REDACTED_SCHEMA_FOR_PORTFOLIO_ONLY\",\n  \"parser_node\": \"Parser - UI/UX\",\n  \"note\": \"Strict output JSON schema omitted to protect intellectual property.\"\n}"
+      }
+    },
+    {
+      "id": "blueprint-node-19",
+      "name": "Agente 6 - Especialista Banco de Dados",
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 1.7,
+      "position": [
+        2128,
+        336
+      ],
+      "parameters": {
+        "promptType": "define",
+        "text": "[REDACTED INPUT TEMPLATE — Agente 6 - Especialista Banco de Dados]",
+        "hasOutputParser": true,
+        "options": {
+          "systemMessage": "[REDACTED — ARCHITECTURAL BLUEPRINT ONLY / NON-FUNCTIONAL]\nAgent: Agente 6 - Especialista Banco de Dados\nRole: Senior Database Engineer designing schema, relations, indexes, constraints, migrations, and seed scripts.\nProprietary prompt engineering and orchestration rules omitted for IP protection."
+        }
+      }
+    },
+    {
+      "id": "blueprint-node-20",
+      "name": "Parser - Banco de Dados",
+      "type": "@n8n/n8n-nodes-langchain.outputParserStructured",
+      "typeVersion": 1.2,
+      "position": [
+        2192,
+        560
+      ],
+      "parameters": {
+        "jsonSchemaExample": "{\n  \"status\": \"REDACTED_SCHEMA_FOR_PORTFOLIO_ONLY\",\n  \"parser_node\": \"Parser - Banco de Dados\",\n  \"note\": \"Strict output JSON schema omitted to protect intellectual property.\"\n}"
+      }
+    },
+    {
+      "id": "blueprint-node-21",
+      "name": "Merge - UX e Banco de Dados",
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 3,
+      "position": [
+        2464,
+        144
+      ],
+      "parameters": {}
+    },
+    {
+      "id": "blueprint-node-22",
+      "name": "Consolidar Especificacao Tecnica",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        2720,
+        144
+      ],
+      "parameters": {
+        "jsCode": "// [REDACTED — ARCHITECTURAL BLUEPRINT ONLY / NON-FUNCTIONAL]\n// Node: Consolidar Especificacao Tecnica\n// Responsibility: Merges PM, Architect, UI/UX, and Database artifacts into a unified specification payload.\n// Proprietary implementation omitted to protect intellectual property.\nthrow new Error('Non-functional portfolio blueprint: implementation redacted.');"
+      }
+    },
+    {
+      "id": "blueprint-node-23",
+      "name": "Agente 4 - Desenvolvedor Frontend",
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 1.7,
+      "position": [
+        3040,
+        -64
+      ],
+      "parameters": {
+        "promptType": "define",
+        "text": "[REDACTED INPUT TEMPLATE — Agente 4 - Desenvolvedor Frontend]",
+        "hasOutputParser": true,
+        "options": {
+          "systemMessage": "[REDACTED — ARCHITECTURAL BLUEPRINT ONLY / NON-FUNCTIONAL]\nAgent: Agente 4 - Desenvolvedor Frontend\nRole: Senior Frontend Developer implementing typed, accessible, API-compliant frontend deliverables.\nProprietary prompt engineering and orchestration rules omitted for IP protection."
+        }
+      }
+    },
+    {
+      "id": "blueprint-node-24",
+      "name": "Parser - Frontend",
+      "type": "@n8n/n8n-nodes-langchain.outputParserStructured",
+      "typeVersion": 1.2,
+      "position": [
+        3104,
+        160
+      ],
+      "parameters": {
+        "jsonSchemaExample": "{\n  \"status\": \"REDACTED_SCHEMA_FOR_PORTFOLIO_ONLY\",\n  \"parser_node\": \"Parser - Frontend\",\n  \"note\": \"Strict output JSON schema omitted to protect intellectual property.\"\n}"
+      }
+    },
+    {
+      "id": "blueprint-node-25",
+      "name": "Agente 5 - Desenvolvedor Backend",
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 1.7,
+      "position": [
+        3040,
+        336
+      ],
+      "parameters": {
+        "promptType": "define",
+        "text": "[REDACTED INPUT TEMPLATE — Agente 5 - Desenvolvedor Backend]",
+        "hasOutputParser": true,
+        "options": {
+          "systemMessage": "[REDACTED — ARCHITECTURAL BLUEPRINT ONLY / NON-FUNCTIONAL]\nAgent: Agente 5 - Desenvolvedor Backend\nRole: Senior Backend Developer implementing REST APIs, auth/authorization, input validation, error handling, and structured logs.\nProprietary prompt engineering and orchestration rules omitted for IP protection."
+        }
+      }
+    },
+    {
+      "id": "blueprint-node-26",
+      "name": "Parser - Backend",
+      "type": "@n8n/n8n-nodes-langchain.outputParserStructured",
+      "typeVersion": 1.2,
+      "position": [
+        3104,
+        560
+      ],
+      "parameters": {
+        "jsonSchemaExample": "{\n  \"status\": \"REDACTED_SCHEMA_FOR_PORTFOLIO_ONLY\",\n  \"parser_node\": \"Parser - Backend\",\n  \"note\": \"Strict output JSON schema omitted to protect intellectual property.\"\n}"
+      }
+    },
+    {
+      "id": "blueprint-node-27",
+      "name": "Merge - Frontend e Backend",
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 3,
+      "position": [
+        3392,
+        144
+      ],
+      "parameters": {}
+    },
+    {
+      "id": "blueprint-node-28",
+      "name": "Consolidar Repositorio de Codigo",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        3632,
+        144
+      ],
+      "parameters": {
+        "jsCode": "// [REDACTED — ARCHITECTURAL BLUEPRINT ONLY / NON-FUNCTIONAL]\n// Node: Consolidar Repositorio de Codigo\n// Responsibility: Consolidates Database, Frontend, and Backend generated files with path-traversal sanitization.\n// Proprietary implementation omitted to protect intellectual property.\nthrow new Error('Non-functional portfolio blueprint: implementation redacted.');"
+      }
+    },
+    {
+      "id": "blueprint-node-29",
+      "name": "Preparar Contexto de Auditoria",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        3888,
+        144
+      ],
+      "parameters": {
+        "jsCode": "// [REDACTED — ARCHITECTURAL BLUEPRINT ONLY / NON-FUNCTIONAL]\n// Node: Preparar Contexto de Auditoria\n// Responsibility: Serializes the consolidated multi-module codebase for AppSec, QA, and Code Review agents.\n// Proprietary implementation omitted to protect intellectual property.\nthrow new Error('Non-functional portfolio blueprint: implementation redacted.');"
+      }
+    },
+    {
+      "id": "blueprint-node-30",
+      "name": "Agente 7 - Auditor de Seguranca",
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 1.7,
+      "position": [
+        4160,
+        144
+      ],
+      "parameters": {
+        "promptType": "define",
+        "text": "[REDACTED INPUT TEMPLATE — Agente 7 - Auditor de Seguranca]",
+        "hasOutputParser": true,
+        "options": {
+          "systemMessage": "[REDACTED — ARCHITECTURAL BLUEPRINT ONLY / NON-FUNCTIONAL]\nAgent: Agente 7 - Auditor de Seguranca\nRole: AppSec Auditor scanning frontend, backend, and database code for OWASP flaws, secrets, and auth gaps.\nProprietary prompt engineering and orchestration rules omitted for IP protection."
+        }
+      }
+    },
+    {
+      "id": "blueprint-node-31",
+      "name": "Parser - Seguranca",
+      "type": "@n8n/n8n-nodes-langchain.outputParserStructured",
+      "typeVersion": 1.2,
+      "position": [
+        4224,
+        352
+      ],
+      "parameters": {
+        "jsonSchemaExample": "{\n  \"status\": \"REDACTED_SCHEMA_FOR_PORTFOLIO_ONLY\",\n  \"parser_node\": \"Parser - Seguranca\",\n  \"note\": \"Strict output JSON schema omitted to protect intellectual property.\"\n}"
+      }
+    },
+    {
+      "id": "blueprint-node-32",
+      "name": "Agente 8 - Engenheiro de QA e Testes",
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 1.7,
+      "position": [
+        4480,
+        144
+      ],
+      "parameters": {
+        "promptType": "define",
+        "text": "[REDACTED INPUT TEMPLATE — Agente 8 - Engenheiro de QA e Testes]",
+        "hasOutputParser": true,
+        "options": {
+          "systemMessage": "[REDACTED — ARCHITECTURAL BLUEPRINT ONLY / NON-FUNCTIONAL]\nAgent: Agente 8 - Engenheiro de QA e Testes\nRole: Senior QA Engineer auditing acceptance criteria/contracts and generating unit, integration, and E2E test suites.\nProprietary prompt engineering and orchestration rules omitted for IP protection."
+        }
+      }
+    },
+    {
+      "id": "blueprint-node-33",
+      "name": "Parser - QA",
+      "type": "@n8n/n8n-nodes-langchain.outputParserStructured",
+      "typeVersion": 1.2,
+      "position": [
+        4544,
+        352
+      ],
+      "parameters": {
+        "jsonSchemaExample": "{\n  \"status\": \"REDACTED_SCHEMA_FOR_PORTFOLIO_ONLY\",\n  \"parser_node\": \"Parser - QA\",\n  \"note\": \"Strict output JSON schema omitted to protect intellectual property.\"\n}"
+      }
+    },
+    {
+      "id": "blueprint-node-34",
+      "name": "Agente 9 - Revisor e Auditor de Codigo",
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 1.7,
+      "position": [
+        4800,
+        144
+      ],
+      "parameters": {
+        "promptType": "define",
+        "text": "[REDACTED INPUT TEMPLATE — Agente 9 - Revisor e Auditor de Codigo]",
+        "hasOutputParser": true,
+        "options": {
+          "systemMessage": "[REDACTED — ARCHITECTURAL BLUEPRINT ONLY / NON-FUNCTIONAL]\nAgent: Agente 9 - Revisor e Auditor de Codigo\nRole: Senior Code Reviewer consolidating Security + QA findings and emitting targeted module fix tasks.\nProprietary prompt engineering and orchestration rules omitted for IP protection."
+        }
+      }
+    },
+    {
+      "id": "blueprint-node-35",
+      "name": "Parser - Auditor",
+      "type": "@n8n/n8n-nodes-langchain.outputParserStructured",
+      "typeVersion": 1.2,
+      "position": [
+        4864,
+        352
+      ],
+      "parameters": {
+        "jsonSchemaExample": "{\n  \"status\": \"REDACTED_SCHEMA_FOR_PORTFOLIO_ONLY\",\n  \"parser_node\": \"Parser - Auditor\",\n  \"note\": \"Strict output JSON schema omitted to protect intellectual property.\"\n}"
+      }
+    },
+    {
+      "id": "blueprint-node-36",
+      "name": "Consolidar Resultado da Auditoria",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        5120,
+        144
+      ],
+      "parameters": {
+        "jsCode": "// [REDACTED — ARCHITECTURAL BLUEPRINT ONLY / NON-FUNCTIONAL]\n// Node: Consolidar Resultado da Auditoria\n// Responsibility: Merges QA test files, computes approval gate across Agents 7/8/9, and appends round history.\n// Proprietary implementation omitted to protect intellectual property.\nthrow new Error('Non-functional portfolio blueprint: implementation redacted.');"
+      }
+    },
+    {
+      "id": "blueprint-node-37",
+      "name": "IF - Auditoria Aprovada?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        5392,
+        144
+      ],
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "redacted-if-37",
+              "leftValue": "REDACTED_EXPRESSION",
+              "rightValue": "REDACTED_VALUE",
+              "operator": {
+                "type": "string",
+                "operation": "equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      }
+    },
+    {
+      "id": "blueprint-node-38",
+      "name": "IF - Tentativas Menor que 3?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        5376,
+        448
+      ],
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "redacted-if-38",
+              "leftValue": "REDACTED_EXPRESSION",
+              "rightValue": "REDACTED_VALUE",
+              "operator": {
+                "type": "string",
+                "operation": "equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      }
+    },
+    {
+      "id": "blueprint-node-39",
+      "name": "Relatorio de Intervencao Humana",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        5680,
+        560
+      ],
+      "parameters": {
+        "jsCode": "// [REDACTED — ARCHITECTURAL BLUEPRINT ONLY / NON-FUNCTIONAL]\n// Node: Relatorio de Intervencao Humana\n// Responsibility: Blocks production ZIP release after 3 failed cycles and produces a structured human escalation report.\n// Proprietary implementation omitted to protect intellectual property.\nthrow new Error('Non-functional portfolio blueprint: implementation redacted.');"
+      }
+    },
+    {
+      "id": "blueprint-node-40",
+      "name": "Preparar Correcao e Incrementar Retry",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        5072,
+        864
+      ],
+      "parameters": {
+        "jsCode": "// [REDACTED — ARCHITECTURAL BLUEPRINT ONLY / NON-FUNCTIONAL]\n// Node: Preparar Correcao e Incrementar Retry\n// Responsibility: Increments retry count and groups blocking audit findings by responsible module (frontend/backend/database).\n// Proprietary implementation omitted to protect intellectual property.\nthrow new Error('Non-functional portfolio blueprint: implementation redacted.');"
+      }
+    },
+    {
+      "id": "blueprint-node-41",
+      "name": "Split Out - Grupos de Correcao",
+      "type": "n8n-nodes-base.splitOut",
+      "typeVersion": 1,
+      "position": [
+        4800,
+        864
+      ],
+      "parameters": {
+        "fieldToSplitOut": "REDACTED_FIELD",
+        "options": {}
+      }
+    },
+    {
+      "id": "blueprint-node-42",
+      "name": "Loop Over Items - Correcoes",
+      "type": "n8n-nodes-base.splitInBatches",
+      "typeVersion": 3,
+      "position": [
+        4544,
+        864
+      ],
+      "parameters": {
+        "options": {}
+      }
+    },
+    {
+      "id": "blueprint-node-43",
+      "name": "Switch - Modulo Responsavel",
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.2,
+      "position": [
+        4288,
+        1024
+      ],
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": false,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "redacted-sw-1",
+                    "leftValue": "REDACTED_FIELD",
+                    "rightValue": "frontend",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "frontend"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": false,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "redacted-sw-2",
+                    "leftValue": "REDACTED_FIELD",
+                    "rightValue": "backend",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "backend"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": false,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "redacted-sw-3",
+                    "leftValue": "REDACTED_FIELD",
+                    "rightValue": "database",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "database"
+            }
+          ]
+        },
+        "options": {
+          "fallbackOutput": "extra"
+        }
+      }
+    },
+    {
+      "id": "blueprint-node-44",
+      "name": "Corretor - Frontend (DeepSeek)",
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 1.7,
+      "position": [
+        4544,
+        1216
+      ],
+      "parameters": {
+        "promptType": "define",
+        "text": "[REDACTED INPUT TEMPLATE — Corretor - Frontend (DeepSeek)]",
+        "hasOutputParser": true,
+        "options": {
+          "systemMessage": "[REDACTED — ARCHITECTURAL BLUEPRINT ONLY / NON-FUNCTIONAL]\nAgent: Corretor - Frontend (DeepSeek)\nRole: Targeted Frontend self-healing agent patching audit findings while preserving frozen API contracts.\nProprietary prompt engineering and orchestration rules omitted for IP protection."
+        }
+      }
+    },
+    {
+      "id": "blueprint-node-45",
+      "name": "Parser - Corretor Frontend",
+      "type": "@n8n/n8n-nodes-langchain.outputParserStructured",
+      "typeVersion": 1.2,
+      "position": [
+        4608,
+        1424
+      ],
+      "parameters": {
+        "jsonSchemaExample": "{\n  \"status\": \"REDACTED_SCHEMA_FOR_PORTFOLIO_ONLY\",\n  \"parser_node\": \"Parser - Corretor Frontend\",\n  \"note\": \"Strict output JSON schema omitted to protect intellectual property.\"\n}"
+      }
+    },
+    {
+      "id": "blueprint-node-46",
+      "name": "Corretor - Backend (DeepSeek)",
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 1.7,
+      "position": [
+        4880,
+        1216
+      ],
+      "parameters": {
+        "promptType": "define",
+        "text": "[REDACTED INPUT TEMPLATE — Corretor - Backend (DeepSeek)]",
+        "hasOutputParser": true,
+        "options": {
+          "systemMessage": "[REDACTED — ARCHITECTURAL BLUEPRINT ONLY / NON-FUNCTIONAL]\nAgent: Corretor - Backend (DeepSeek)\nRole: Targeted Backend self-healing agent patching security/QA findings while preserving API contracts.\nProprietary prompt engineering and orchestration rules omitted for IP protection."
+        }
+      }
+    },
+    {
+      "id": "blueprint-node-47",
+      "name": "Parser - Corretor Backend",
+      "type": "@n8n/n8n-nodes-langchain.outputParserStructured",
+      "typeVersion": 1.2,
+      "position": [
+        4944,
+        1424
+      ],
+      "parameters": {
+        "jsonSchemaExample": "{\n  \"status\": \"REDACTED_SCHEMA_FOR_PORTFOLIO_ONLY\",\n  \"parser_node\": \"Parser - Corretor Backend\",\n  \"note\": \"Strict output JSON schema omitted to protect intellectual property.\"\n}"
+      }
+    },
+    {
+      "id": "blueprint-node-48",
+      "name": "Corretor - Banco de Dados (OpenAI)",
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 1.7,
+      "position": [
+        5232,
+        1216
+      ],
+      "parameters": {
+        "promptType": "define",
+        "text": "[REDACTED INPUT TEMPLATE — Corretor - Banco de Dados (OpenAI)]",
+        "hasOutputParser": true,
+        "options": {
+          "systemMessage": "[REDACTED — ARCHITECTURAL BLUEPRINT ONLY / NON-FUNCTIONAL]\nAgent: Corretor - Banco de Dados (OpenAI)\nRole: Targeted Database self-healing agent patching integrity, index, constraint, and migration issues.\nProprietary prompt engineering and orchestration rules omitted for IP protection."
+        }
+      }
+    },
+    {
+      "id": "blueprint-node-49",
+      "name": "Parser - Corretor Banco de Dados",
+      "type": "@n8n/n8n-nodes-langchain.outputParserStructured",
+      "typeVersion": 1.2,
+      "position": [
+        5280,
+        1424
+      ],
+      "parameters": {
+        "jsonSchemaExample": "{\n  \"status\": \"REDACTED_SCHEMA_FOR_PORTFOLIO_ONLY\",\n  \"parser_node\": \"Parser - Corretor Banco de Dados\",\n  \"note\": \"Strict output JSON schema omitted to protect intellectual property.\"\n}"
+      }
+    },
+    {
+      "id": "blueprint-node-50",
+      "name": "Aplicar Patches no Projeto",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        3888,
+        864
+      ],
+      "parameters": {
+        "jsCode": "// [REDACTED — ARCHITECTURAL BLUEPRINT ONLY / NON-FUNCTIONAL]\n// Node: Aplicar Patches no Projeto\n// Responsibility: Applies patched files returned by specialist fixers back into project state for re-auditing.\n// Proprietary implementation omitted to protect intellectual property.\nthrow new Error('Non-functional portfolio blueprint: implementation redacted.');"
+      }
+    },
+    {
+      "id": "blueprint-node-51",
+      "name": "Agente 10 - DevOps e Documentacao",
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 1.7,
+      "position": [
+        5728,
+        80
+      ],
+      "parameters": {
+        "promptType": "define",
+        "text": "[REDACTED INPUT TEMPLATE — Agente 10 - DevOps e Documentacao]",
+        "hasOutputParser": true,
+        "options": {
+          "systemMessage": "[REDACTED — ARCHITECTURAL BLUEPRINT ONLY / NON-FUNCTIONAL]\nAgent: Agente 10 - DevOps e Documentacao\nRole: Senior DevOps Engineer generating Dockerfiles, docker-compose, .env.example, GitHub Actions CI, and README.\nProprietary prompt engineering and orchestration rules omitted for IP protection."
+        }
+      }
+    },
+    {
+      "id": "blueprint-node-52",
+      "name": "Parser - DevOps",
+      "type": "@n8n/n8n-nodes-langchain.outputParserStructured",
+      "typeVersion": 1.2,
+      "position": [
+        5792,
+        304
+      ],
+      "parameters": {
+        "jsonSchemaExample": "{\n  \"status\": \"REDACTED_SCHEMA_FOR_PORTFOLIO_ONLY\",\n  \"parser_node\": \"Parser - DevOps\",\n  \"note\": \"Strict output JSON schema omitted to protect intellectual property.\"\n}"
+      }
+    },
+    {
+      "id": "blueprint-node-53",
+      "name": "Montar Pacote Final e Arquivos",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        6048,
+        80
+      ],
+      "parameters": {
+        "jsCode": "// [REDACTED — ARCHITECTURAL BLUEPRINT ONLY / NON-FUNCTIONAL]\n// Node: Montar Pacote Final e Arquivos\n// Responsibility: Integrates DevOps deliverables and converts all repository files into binary payloads for compression.\n// Proprietary implementation omitted to protect intellectual property.\nthrow new Error('Non-functional portfolio blueprint: implementation redacted.');"
+      }
+    },
+    {
+      "id": "blueprint-node-54",
+      "name": "Compactar Projeto em ZIP",
+      "type": "n8n-nodes-base.compression",
+      "typeVersion": 1.1,
+      "position": [
+        6304,
+        80
+      ],
+      "parameters": {
+        "operation": "compress",
+        "binaryPropertyName": "REDACTED_BINARY_KEYS",
+        "fileName": "REDACTED_PROJECT.zip"
+      }
+    },
+    {
+      "id": "blueprint-node-55",
+      "name": "Salvar ZIP para Download",
+      "type": "n8n-nodes-base.readWriteFile",
+      "typeVersion": 1,
+      "position": [
+        6560,
+        80
+      ],
+      "parameters": {
+        "operation": "write",
+        "fileName": "/REDACTED_PATH/output.zip",
+        "options": {}
+      }
+    },
+    {
+      "id": "blueprint-node-56",
+      "name": "Formatar Entrega Final",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        6848,
+        80
+      ],
+      "parameters": {
+        "jsCode": "// [REDACTED — ARCHITECTURAL BLUEPRINT ONLY / NON-FUNCTIONAL]\n// Node: Formatar Entrega Final\n// Responsibility: Formats final delivery report with audit scores, file tree, runtime verification checklist, and ZIP link.\n// Proprietary implementation omitted to protect intellectual property.\nthrow new Error('Non-functional portfolio blueprint: implementation redacted.');"
+      }
+    },
+    {
+      "id": "blueprint-node-57",
+      "name": "Webhook - Download do ZIP",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        224,
+        1072
+      ],
+      "parameters": {
+        "path": "REDACTED_WEBHOOK_PATH",
+        "responseMode": "responseNode",
+        "options": {}
+      }
+    },
+    {
+      "id": "blueprint-node-58",
+      "name": "Validar Nome do Arquivo ZIP",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        480,
+        1072
+      ],
+      "parameters": {
+        "jsCode": "// [REDACTED — ARCHITECTURAL BLUEPRINT ONLY / NON-FUNCTIONAL]\n// Node: Validar Nome do Arquivo ZIP\n// Responsibility: Validates requested ZIP filename against strict regex to prevent path traversal attacks.\n// Proprietary implementation omitted to protect intellectual property.\nthrow new Error('Non-functional portfolio blueprint: implementation redacted.');"
+      }
+    },
+    {
+      "id": "blueprint-node-59",
+      "name": "IF - Arquivo ZIP Valido?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        752,
+        1072
+      ],
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "redacted-if-59",
+              "leftValue": "REDACTED_EXPRESSION",
+              "rightValue": "REDACTED_VALUE",
+              "operator": {
+                "type": "string",
+                "operation": "equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      }
+    },
+    {
+      "id": "blueprint-node-60",
+      "name": "Ler ZIP do Disco",
+      "type": "n8n-nodes-base.readWriteFile",
+      "typeVersion": 1,
+      "position": [
+        1024,
+        992
+      ],
+      "parameters": {
+        "fileSelector": "/REDACTED_PATH/output.zip",
+        "options": {
+          "dataPropertyName": "data"
+        }
+      }
+    },
+    {
+      "id": "blueprint-node-61",
+      "name": "IF - ZIP Encontrado?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        1280,
+        992
+      ],
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "redacted-if-61",
+              "leftValue": "REDACTED_EXPRESSION",
+              "rightValue": "REDACTED_VALUE",
+              "operator": {
+                "type": "string",
+                "operation": "equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      }
+    },
+    {
+      "id": "blueprint-node-62",
+      "name": "Responder com Arquivo ZIP",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.1,
+      "position": [
+        1568,
+        912
+      ],
+      "parameters": {
+        "respondWith": "text",
+        "responseBody": "REDACTED_PORTFOLIO_BLUEPRINT",
+        "options": {}
+      }
+    },
+    {
+      "id": "blueprint-node-63",
+      "name": "Responder Erro 404",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.1,
+      "position": [
+        1568,
+        1120
+      ],
+      "parameters": {
+        "respondWith": "text",
+        "responseBody": "REDACTED_PORTFOLIO_BLUEPRINT",
+        "options": {}
+      }
+    },
+    {
+      "id": "blueprint-node-64",
+      "name": "Responder Erro 400",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.1,
+      "position": [
+        1024,
+        1232
+      ],
+      "parameters": {
+        "respondWith": "text",
+        "responseBody": "REDACTED_PORTFOLIO_BLUEPRINT",
+        "options": {}
+      }
+    },
+    {
+      "id": "blueprint-node-65",
+      "name": "Error Trigger",
+      "type": "n8n-nodes-base.errorTrigger",
+      "typeVersion": 1,
+      "position": [
+        224,
+        752
+      ],
+      "parameters": {}
+    },
+    {
+      "id": "blueprint-node-66",
+      "name": "Registrar Erro de Execucao",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        480,
+        752
+      ],
+      "parameters": {
+        "jsCode": "// [REDACTED — ARCHITECTURAL BLUEPRINT ONLY / NON-FUNCTIONAL]\n// Node: Registrar Erro de Execucao\n// Responsibility: Captures global workflow failures into structured operational error logs.\n// Proprietary implementation omitted to protect intellectual property.\nthrow new Error('Non-functional portfolio blueprint: implementation redacted.');"
+      }
+    }
+  ],
+  "connections": {
+    "Chat Trigger": {
+      "main": [
+        [
+          {
+            "node": "Agente 0 - Chatbot Orquestrador",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Memoria Conversacional": {
+      "ai_memory": [
+        [
+          {
+            "node": "Agente 0 - Chatbot Orquestrador",
+            "type": "ai_memory",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI GPT-4o-mini (Chatbot)": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Agente 0 - Chatbot Orquestrador",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI GPT-4o (Planejamento e Design)": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Agente 1 - Gerente de Projeto",
+            "type": "ai_languageModel",
+            "index": 0
+          },
+          {
+            "node": "Agente 3 - Especialista UI/UX",
+            "type": "ai_languageModel",
+            "index": 0
+          },
+          {
+            "node": "Agente 6 - Especialista Banco de Dados",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "DeepSeek Chat (Arquitetura e Dev)": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Agente 2 - Arquiteto de Software",
+            "type": "ai_languageModel",
+            "index": 0
+          },
+          {
+            "node": "Agente 4 - Desenvolvedor Frontend",
+            "type": "ai_languageModel",
+            "index": 0
+          },
+          {
+            "node": "Agente 5 - Desenvolvedor Backend",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI GPT-4o (Seguranca e Auditoria)": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Agente 7 - Auditor de Seguranca",
+            "type": "ai_languageModel",
+            "index": 0
+          },
+          {
+            "node": "Agente 9 - Revisor e Auditor de Codigo",
+            "type": "ai_languageModel",
+            "index": 0
+          },
+          {
+            "node": "Corretor - Banco de Dados (OpenAI)",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "DeepSeek Chat (QA, Correcao e DevOps)": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Agente 8 - Engenheiro de QA e Testes",
+            "type": "ai_languageModel",
+            "index": 0
+          },
+          {
+            "node": "Agente 10 - DevOps e Documentacao",
+            "type": "ai_languageModel",
+            "index": 0
+          },
+          {
+            "node": "Corretor - Frontend (DeepSeek)",
+            "type": "ai_languageModel",
+            "index": 0
+          },
+          {
+            "node": "Corretor - Backend (DeepSeek)",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Parser - Chatbot Orquestrador": {
+      "ai_outputParser": [
+        [
+          {
+            "node": "Agente 0 - Chatbot Orquestrador",
+            "type": "ai_outputParser",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Parser - Gerente de Projeto": {
+      "ai_outputParser": [
+        [
+          {
+            "node": "Agente 1 - Gerente de Projeto",
+            "type": "ai_outputParser",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Parser - Arquiteto": {
+      "ai_outputParser": [
+        [
+          {
+            "node": "Agente 2 - Arquiteto de Software",
+            "type": "ai_outputParser",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Parser - UI/UX": {
+      "ai_outputParser": [
+        [
+          {
+            "node": "Agente 3 - Especialista UI/UX",
+            "type": "ai_outputParser",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Parser - Banco de Dados": {
+      "ai_outputParser": [
+        [
+          {
+            "node": "Agente 6 - Especialista Banco de Dados",
+            "type": "ai_outputParser",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Parser - Frontend": {
+      "ai_outputParser": [
+        [
+          {
+            "node": "Agente 4 - Desenvolvedor Frontend",
+            "type": "ai_outputParser",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Parser - Backend": {
+      "ai_outputParser": [
+        [
+          {
+            "node": "Agente 5 - Desenvolvedor Backend",
+            "type": "ai_outputParser",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Parser - Seguranca": {
+      "ai_outputParser": [
+        [
+          {
+            "node": "Agente 7 - Auditor de Seguranca",
+            "type": "ai_outputParser",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Parser - QA": {
+      "ai_outputParser": [
+        [
+          {
+            "node": "Agente 8 - Engenheiro de QA e Testes",
+            "type": "ai_outputParser",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Parser - Auditor": {
+      "ai_outputParser": [
+        [
+          {
+            "node": "Agente 9 - Revisor e Auditor de Codigo",
+            "type": "ai_outputParser",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Parser - Corretor Frontend": {
+      "ai_outputParser": [
+        [
+          {
+            "node": "Corretor - Frontend (DeepSeek)",
+            "type": "ai_outputParser",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Parser - Corretor Backend": {
+      "ai_outputParser": [
+        [
+          {
+            "node": "Corretor - Backend (DeepSeek)",
+            "type": "ai_outputParser",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Parser - Corretor Banco de Dados": {
+      "ai_outputParser": [
+        [
+          {
+            "node": "Corretor - Banco de Dados (OpenAI)",
+            "type": "ai_outputParser",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Parser - DevOps": {
+      "ai_outputParser": [
+        [
+          {
+            "node": "Agente 10 - DevOps e Documentacao",
+            "type": "ai_outputParser",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Agente 0 - Chatbot Orquestrador": {
+      "main": [
+        [
+          {
+            "node": "IF - Iniciar Geracao de Programa?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "IF - Iniciar Geracao de Programa?": {
+      "main": [
+        [
+          {
+            "node": "Inicializar Estado do Projeto",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Responder no Chat",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Inicializar Estado do Projeto": {
+      "main": [
+        [
+          {
+            "node": "Agente 1 - Gerente de Projeto",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Agente 1 - Gerente de Projeto": {
+      "main": [
+        [
+          {
+            "node": "Agente 2 - Arquiteto de Software",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Agente 2 - Arquiteto de Software": {
+      "main": [
+        [
+          {
+            "node": "Agente 3 - Especialista UI/UX",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Agente 6 - Especialista Banco de Dados",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Agente 3 - Especialista UI/UX": {
+      "main": [
+        [
+          {
+            "node": "Merge - UX e Banco de Dados",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Agente 6 - Especialista Banco de Dados": {
+      "main": [
+        [
+          {
+            "node": "Merge - UX e Banco de Dados",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "Merge - UX e Banco de Dados": {
+      "main": [
+        [
+          {
+            "node": "Consolidar Especificacao Tecnica",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Consolidar Especificacao Tecnica": {
+      "main": [
+        [
+          {
+            "node": "Agente 4 - Desenvolvedor Frontend",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Agente 5 - Desenvolvedor Backend",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Agente 4 - Desenvolvedor Frontend": {
+      "main": [
+        [
+          {
+            "node": "Merge - Frontend e Backend",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Agente 5 - Desenvolvedor Backend": {
+      "main": [
+        [
+          {
+            "node": "Merge - Frontend e Backend",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "Merge - Frontend e Backend": {
+      "main": [
+        [
+          {
+            "node": "Consolidar Repositorio de Codigo",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Consolidar Repositorio de Codigo": {
+      "main": [
+        [
+          {
+            "node": "Preparar Contexto de Auditoria",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Preparar Contexto de Auditoria": {
+      "main": [
+        [
+          {
+            "node": "Agente 7 - Auditor de Seguranca",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Agente 7 - Auditor de Seguranca": {
+      "main": [
+        [
+          {
+            "node": "Agente 8 - Engenheiro de QA e Testes",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Agente 8 - Engenheiro de QA e Testes": {
+      "main": [
+        [
+          {
+            "node": "Agente 9 - Revisor e Auditor de Codigo",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Agente 9 - Revisor e Auditor de Codigo": {
+      "main": [
+        [
+          {
+            "node": "Consolidar Resultado da Auditoria",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Consolidar Resultado da Auditoria": {
+      "main": [
+        [
+          {
+            "node": "IF - Auditoria Aprovada?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "IF - Auditoria Aprovada?": {
+      "main": [
+        [
+          {
+            "node": "Agente 10 - DevOps e Documentacao",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "IF - Tentativas Menor que 3?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "IF - Tentativas Menor que 3?": {
+      "main": [
+        [
+          {
+            "node": "Preparar Correcao e Incrementar Retry",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Relatorio de Intervencao Humana",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Preparar Correcao e Incrementar Retry": {
+      "main": [
+        [
+          {
+            "node": "Split Out - Grupos de Correcao",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Split Out - Grupos de Correcao": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items - Correcoes",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Loop Over Items - Correcoes": {
+      "main": [
+        [
+          {
+            "node": "Aplicar Patches no Projeto",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Switch - Modulo Responsavel",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Switch - Modulo Responsavel": {
+      "main": [
+        [
+          {
+            "node": "Corretor - Frontend (DeepSeek)",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Corretor - Backend (DeepSeek)",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Corretor - Banco de Dados (OpenAI)",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Corretor - Backend (DeepSeek)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Corretor - Frontend (DeepSeek)": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items - Correcoes",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Corretor - Backend (DeepSeek)": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items - Correcoes",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Corretor - Banco de Dados (OpenAI)": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items - Correcoes",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Aplicar Patches no Projeto": {
+      "main": [
+        [
+          {
+            "node": "Preparar Contexto de Auditoria",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Agente 10 - DevOps e Documentacao": {
+      "main": [
+        [
+          {
+            "node": "Montar Pacote Final e Arquivos",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Montar Pacote Final e Arquivos": {
+      "main": [
+        [
+          {
+            "node": "Compactar Projeto em ZIP",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Compactar Projeto em ZIP": {
+      "main": [
+        [
+          {
+            "node": "Salvar ZIP para Download",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Salvar ZIP para Download": {
+      "main": [
+        [
+          {
+            "node": "Formatar Entrega Final",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Webhook - Download do ZIP": {
+      "main": [
+        [
+          {
+            "node": "Validar Nome do Arquivo ZIP",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Validar Nome do Arquivo ZIP": {
+      "main": [
+        [
+          {
+            "node": "IF - Arquivo ZIP Valido?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "IF - Arquivo ZIP Valido?": {
+      "main": [
+        [
+          {
+            "node": "Ler ZIP do Disco",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Responder Erro 400",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Ler ZIP do Disco": {
+      "main": [
+        [
+          {
+            "node": "IF - ZIP Encontrado?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "IF - ZIP Encontrado?": {
+      "main": [
+        [
+          {
+            "node": "Responder com Arquivo ZIP",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Responder Erro 404",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Error Trigger": {
+      "main": [
+        [
+          {
+            "node": "Registrar Erro de Execucao",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "pinData": {},
+  "nodeGroups": [],
+  "tags": []
+}
